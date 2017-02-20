@@ -286,16 +286,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.stats.af.paaf=0 \
     persist.camera.feature.cac=0 \
     persist.camera.ois.disable=0 \
-    persist.camera.zsl.mode=1 \
-    persist.camera.time.monotonic=0
+    persist.camera.zsl.mode=1
 
-ifneq ($(filter shinano rhine, $(SOMC_PLATFORM)),)
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=0
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=1
-endif
+    persist.camera.HAL3.enabled=0 \
+    media.stagefright.less-secure=true \
+    media.stagefright.legacyencoder=true
 
 # Sensors debug
 PRODUCT_PROPERTY_OVERRIDES += \
